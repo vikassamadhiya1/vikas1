@@ -7,6 +7,11 @@ pipeline {
                 echo 'Building..'
             }
         }
+        stage('Input') {
+            steps {
+                input('Do you want to proceed?')
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -14,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying'
             }
         }
     }
